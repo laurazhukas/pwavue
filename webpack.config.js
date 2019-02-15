@@ -89,7 +89,7 @@ module.exports = (env, options) => {
           loaders: 'html-loader',
         },
         {
-          test: /\.(eot|svg|ttf|woff)$/,
+          test: /\.(png|eot|svg|ttf|woff)$/,
           loader: 'file-loader?name=[name]-[hash].[ext]',
         },
       ],

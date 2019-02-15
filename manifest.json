@@ -1,0 +1,25 @@
+{
+    "name": "pwaVue",
+    "short_name": "pwaVue",
+    "start_url": "index.html",
+    "display": "standalone",
+    "theme_color": "#9370DB",
+    "background_color": "#fff",
+    "icons": [
+        {
+            "src": "logoChecklist.svg",
+            "sizes": "800x800",
+            "type": "svg"
+        },
+        {
+            "src": "logo192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icon-clipboard-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
