@@ -3,6 +3,7 @@ const path = require('path')
 const webpack = require('webpack')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
+const SWPrecache = require('sw-precache-webpack-plugin')
 module.exports = (env, options) => {
   console.log(`Running Webpack in mode: ${options.mode}`)
   const PRODUCTION = options.mode === 'production'
@@ -39,7 +40,17 @@ module.exports = (env, options) => {
               beautify: false,
             }
           }
-        })
+        }),
+        new SWPrecache ({
+          catchId: 'pwaVue',
+          filepath: 'service-worker.js',
+          staticFileGlobs: [
+            'index.html',
+            'manifest.json',
+            'dist/*.{js,css}'
+          ],
+          stripPrefix: '/'
+        }),
       ] : []
     },
     devtool: 'sourcemap',
